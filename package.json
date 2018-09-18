@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "koa": "^2.5.3",
-    "stix": "^0.1.3"
+    "stix": "^0.2.1"
   },
   "license": "MIT"
 }
