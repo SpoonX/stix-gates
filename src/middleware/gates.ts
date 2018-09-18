@@ -11,7 +11,6 @@ export const gatesMiddleware = (app: Application, config: GateConfigInterface) =
     const { action, controllerName } = ctx.state.dispatch;
     const gates: GatesType           = Gate.applicableGates(controllerName, action, config);
 
-
     // No gates/false? Either false or a bug. Refuse to grant access.
     if (!gates) {
       return ctx.state.response = clientError.forbidden();
