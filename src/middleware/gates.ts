@@ -1,10 +1,9 @@
-import { Middleware } from 'koa';
 import { GateConfigInterface } from '../Library';
 import { InvalidGateResultError, InvalidGateTypeError } from '../Library/Error';
 import { Gate, GatesType, GateResultType, GateFunction } from '../Library/Gate';
 import { ContextInterface, Response, Application } from 'stix';
 
-export const gatesMiddleware = (app: Application, config: GateConfigInterface): Middleware => {
+export const gatesMiddleware = (app: Application, config: GateConfigInterface) => {
   return async function gates (ctx: ContextInterface, next: Function) {
     const clientError                = app.getResponseManager().clientError();
     const serverError                = app.getResponseManager().serverError();
