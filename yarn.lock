@@ -717,9 +717,9 @@ stack-trace@0.0.x:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
 
-stix@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/stix/-/stix-1.0.0.tgz#599ca60eff1fe462e7560de0d9278b30a9d9b988"
+stix@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/stix/-/stix-1.0.2.tgz#3c826bf2f94de1fe4af141927dcb7021d90b5446"
   dependencies:
     "@koa/cors" "^2.2.2"
     "@types/bytes" "^3.0.0"
