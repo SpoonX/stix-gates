@@ -1,6 +1,6 @@
 {
   "name": "stix-gates",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A stix module that allows you to setup enrichers, validators and more for actions.",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "koa": "^2.5.3",
-    "stix": "^1.0.0",
+    "stix": "^1.0.2",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-eslint-rules": "^5.4.0",
@@ -39,7 +39,7 @@
   },
   "peerDependencies": {
     "koa": "^2.5.3",
-    "stix": "^0.2.1"
+    "stix": "^1.0.2"
   },
   "license": "MIT"
 }
