@@ -5,8 +5,8 @@ import { ContextInterface, Response, Application } from 'stix';
 
 export const gatesMiddleware = (app: Application, config: GateConfigInterface) => {
   return async function gates (ctx: ContextInterface, next: Function) {
-    const clientError                = app.getResponseManager().clientError();
-    const serverError                = app.getResponseManager().serverError();
+    const clientError                = app.getResponseService().clientError();
+    const serverError                = app.getResponseService().serverError();
     const logger                     = app.getLogger();
     const { action, controllerName } = ctx.state.dispatch;
     const gates: GatesType           = Gate.applicableGates(controllerName, action, config);
@@ -71,8 +71,8 @@ export const gatesMiddleware = (app: Application, config: GateConfigInterface) =
 const passGate = async (ctx: ContextInterface, app: Application, gate: GatesType): Promise<GateResultType> => {
   const { action, controllerName } = ctx.state.dispatch;
   const logger                     = app.getLogger();
-  const serverError                = app.getResponseManager().serverError();
-  const clientError                = app.getResponseManager().clientError();
+  const serverError                = app.getResponseService().serverError();
+  const clientError                = app.getResponseService().clientError();
 
   let result: GateResultType;
 
