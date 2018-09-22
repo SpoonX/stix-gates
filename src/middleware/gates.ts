@@ -1,13 +1,12 @@
 import { GateConfigInterface } from '../Library';
 import { InvalidGateResultError, InvalidGateTypeError } from '../Library/Error';
 import { Gate, GatesType, GateResultType, GateFunction } from '../Library/Gate';
-import { ContextInterface, Response, Application } from 'stix';
+import { ContextInterface, Response, ResponseService, LoggerService } from 'stix';
 
-export const gatesMiddleware = (app: Application, config: GateConfigInterface) => {
+export const gatesMiddleware = (config: GateConfigInterface, responseService: ResponseService, logger: LoggerService) => {
   return async function gates (ctx: ContextInterface, next: Function) {
-    const clientError                = app.getResponseService().clientError();
-    const serverError                = app.getResponseService().serverError();
-    const logger                     = app.getLogger();
+    const clientError                = responseService.clientError();
+    const serverError                = responseService.serverError();
     const { action, controllerName } = ctx.state.dispatch;
     const gates: GatesType           = Gate.applicableGates(controllerName, action, config);
 
@@ -23,7 +22,7 @@ export const gatesMiddleware = (app: Application, config: GateConfigInterface) =
 
     // Gates is a function, so a single check to perform. Woo.
     if (typeof gates === 'function') {
-      const result: GateResultType = await passGate(ctx, app, gates);
+      const result: GateResultType = await passGate(ctx, responseService, logger, gates);
 
       // Return and, if a truthy result call next, meaning no response was fabricated yet.
       return result && next();
@@ -57,7 +56,7 @@ export const gatesMiddleware = (app: Application, config: GateConfigInterface) =
         return ctx.state.response = clientError.forbidden();
       }
 
-      const result: GateResultType = await passGate(ctx, app, gate);
+      const result: GateResultType = await passGate(ctx, responseService, logger, gate);
 
       if (!result) {
         return;
@@ -68,11 +67,15 @@ export const gatesMiddleware = (app: Application, config: GateConfigInterface) =
   };
 };
 
-const passGate = async (ctx: ContextInterface, app: Application, gate: GatesType): Promise<GateResultType> => {
+const passGate = async (
+  ctx: ContextInterface,
+  responseService: ResponseService,
+  logger: LoggerService,
+  gate: GatesType,
+): Promise<GateResultType> => {
   const { action, controllerName } = ctx.state.dispatch;
-  const logger                     = app.getLogger();
-  const serverError                = app.getResponseService().serverError();
-  const clientError                = app.getResponseService().clientError();
+  const serverError                = responseService.serverError();
+  const clientError                = responseService.clientError();
 
   let result: GateResultType;
 
