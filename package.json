@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "koa": "^2.5.3",
-    "stix": "^2.0.0",
+    "stix": "^3.0.0",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-eslint-rules": "^5.4.0",
@@ -43,7 +43,7 @@
   },
   "peerDependencies": {
     "koa": "^2.5.3",
-    "stix": "^2.0.0"
+    "stix": "^3.0.0"
   },
   "license": "MIT"
 }
