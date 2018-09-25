@@ -1,3 +1,13 @@
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/SpoonX/stix-gates/compare/v2.0.2...v2.0.3) (2018-09-25)
+
+
+### Bug Fixes
+
+* **middleware:** do not error on missing config ([582f083](https://github.com/SpoonX/stix-gates/commit/582f083))
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/SpoonX/stix-gates/compare/v2.0.1...v2.0.2) (2018-09-25)
 
