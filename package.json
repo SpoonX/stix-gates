@@ -1,6 +1,6 @@
 {
   "name": "stix-gates",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A stix module that allows you to setup enrichers, validators and more for actions.",
   "repository": {
     "type": "git",
