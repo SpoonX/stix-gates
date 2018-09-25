@@ -42,7 +42,6 @@
     "typescript": "^3.0.3"
   },
   "peerDependencies": {
-    "koa": "^2.5.3",
     "stix": "^3.0.0"
   },
   "license": "MIT"
