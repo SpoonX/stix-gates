@@ -3,7 +3,7 @@ import { gatesMiddleware } from '../middleware';
 import { Config, Event, LoggerService, ModuleInterface, ModuleManager, ResponseService, ServerService } from 'stix';
 
 export class Gates implements ModuleInterface {
-  public onBootstrap(event: Event<ModuleManager>): void {
+  public onBootstrap (event: Event<ModuleManager>): void {
     const serviceManager = event.getTarget().getApplication().getServiceManager();
 
     serviceManager.get(ServerService).useBefore('dispatch', gatesMiddleware(

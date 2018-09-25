@@ -5,6 +5,10 @@ import { ContextInterface, Response, ResponseService, LoggerService } from 'stix
 
 export const gatesMiddleware = (config: GateConfigInterface, responseService: ResponseService, logger: LoggerService) => {
   return async function gates (ctx: ContextInterface, next: Function) {
+    if (!config) {
+      return next();
+    }
+
     const clientError                = responseService.clientError();
     const serverError                = responseService.serverError();
     const { action, controllerName } = ctx.state.dispatch;
