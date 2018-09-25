@@ -8,7 +8,7 @@ export class Gate {
     return { [ControllerManager.getControllerName(controller)]: Gate.composeWithBaseRules(rules, baseRules) };
   }
 
-  public static composeWithBaseRules(rules: GateActionsInterface, baseRules?: BaseRulesType): GateActionsInterface {
+  public static composeWithBaseRules (rules: GateActionsInterface, baseRules?: BaseRulesType): GateActionsInterface {
     if (!baseRules) {
       return rules;
     }
@@ -20,7 +20,7 @@ export class Gate {
     }, {} as GateActionsInterface);
   }
 
-  public static applicableGates(controller: string, action: string, pool: GatesInterface): GatesType {
+  public static applicableGates (controller: string, action: string, pool: GatesInterface): GatesType {
     const fallbackGate: GatesType = pool['*'] as GatesType || false;
 
     // Controller not defined in pool, fallback to *, or hard default (false).
