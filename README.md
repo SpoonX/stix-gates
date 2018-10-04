@@ -61,7 +61,7 @@ import { IsAuthenticated, IsNotGuest } from '../api/gates';
 const compose = Gate.compose;
 
 export const gate = {
-  locations: [ path.resolve(__dirname, '..', 'src', 'Gate') ],
+  locations: [ path.resolve(__dirname, '..', 'src', 'Gate') ], // Tell stix-gates where it can find your Gate classes
   gates: {}, // Optional service-manager config
   rules: new Map([
     // By default, allow no access to anything.
