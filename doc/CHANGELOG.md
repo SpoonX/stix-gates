@@ -1,3 +1,13 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/SpoonX/stix-gates/compare/v2.0.3...v3.0.0) (2018-10-04)
+
+
+### Features
+
+* **project:** make gates plugins and stix@v4 compatible ([746fd7c](https://github.com/SpoonX/stix-gates/commit/746fd7c))
+
+
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/SpoonX/stix-gates/compare/v2.0.2...v2.0.3) (2018-09-25)
 
