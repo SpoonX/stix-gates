@@ -1,5 +1,5 @@
 export * from './Gate';
+export * from './AbstractGate';
 export * from './GateActionsInterface';
-export * from './GateConfigInterface';
-export * from './GatesInterface';
 export * from './GateTypes';
+export * from './GateManager';

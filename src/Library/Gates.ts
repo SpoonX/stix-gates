@@ -1,15 +1,26 @@
-import { GateConfigInterface } from '.';
-import { gatesMiddleware } from '../middleware';
-import { Config, Event, LoggerService, ModuleInterface, ModuleManager, ResponseService, ServerService } from 'stix';
+import { GateManagerConfigType } from '.';
+import * as config from '../config';
+import {
+  Config,
+  DispatchMiddleware,
+  Event,
+  ModuleInterface,
+  ModuleManager,
+  ServerService,
+} from 'stix';
+import { GatesMiddleware } from './Gate/GatesMiddleware';
 
 export class Gates implements ModuleInterface {
   public onBootstrap (event: Event<ModuleManager>): void {
     const serviceManager = event.getTarget().getApplication().getServiceManager();
+    const gatesMiddleware = serviceManager.get(GatesMiddleware);
 
-    serviceManager.get(ServerService).useBefore('dispatch', gatesMiddleware(
-      serviceManager.get(Config).of<GateConfigInterface>('gates'),
-      serviceManager.get(ResponseService),
-      serviceManager.get(LoggerService),
-    ));
+    gatesMiddleware.setConfig(serviceManager.get(Config).of<GateManagerConfigType>('gate').rules);
+
+    serviceManager.get(ServerService).useBefore(DispatchMiddleware, gatesMiddleware);
+  }
+
+  getConfig () {
+    return config;
   }
 }
