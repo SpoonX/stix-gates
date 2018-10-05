@@ -1,8 +1,8 @@
-[![Slack Status](https://spoonx-slack.herokuapp.com/badge.svg)](https://spoonx-slack.herokuapp.com)
-
 # stix-gates
 
 A [stix](https://github.com/SpoonX/stix) module that allows you to setup enrichers, validators and infinitely more for actions.
+
+[![Slack Status](https://spoonx-slack.herokuapp.com/badge.svg)](https://spoonx-slack.herokuapp.com)
 
 ## What are gates?
 
