@@ -34,6 +34,7 @@
     "postpublish": "git push upstream master && git push upstream --tags"
   },
   "devDependencies": {
+    "stix": "^4.1.7",
     "koa": "^2.5.3",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
