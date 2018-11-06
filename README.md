@@ -160,7 +160,7 @@ The AbstractGate extends the AbstractResponseHelper, giving you the following he
 - internalServerErrorResponse
 - permanentRedirectResponse
 
-You can read more about resonses in the Stix documentation.
+You can read more about responses in the Stix documentation.
 
 </p>
 </details>
