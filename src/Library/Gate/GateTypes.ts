@@ -1,13 +1,7 @@
-import { AbstractActionController, ContextInterface, ControllerType, Response, ServiceManagerConfigType } from 'stix';
+import { AbstractActionController, ControllerType, Response, ServiceManagerConfigType } from 'stix';
 import { AbstractGate } from './AbstractGate';
 
-export type GatesType = Array<GateFunction | boolean> | GateFunction | boolean;
-
 export type GateResultType = boolean | Response | void;
-
-export type GateReturnType = Promise<GateResultType>;
-
-export type GateFunction = (ctx: ContextInterface) => GateReturnType;
 
 export type GateClassType = new () => AbstractGate;
 
