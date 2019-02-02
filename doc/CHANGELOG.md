@@ -1,3 +1,7 @@
+## [3.0.6](https://github.com/SpoonX/stix-gates/compare/v3.0.5...v3.0.6) (2019-02-02)
+
+
+
 <a name="3.0.5"></a>
 ## [3.0.5](https://github.com/SpoonX/stix-gates/compare/v3.0.4...v3.0.5) (2018-11-29)
 
