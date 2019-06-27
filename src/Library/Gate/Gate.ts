@@ -29,6 +29,10 @@ export class Gate {
   }
 
   public static applicableGates (controller: typeof AbstractActionController, action: string, pool: GatesConfigType): GatesActionRulesType {
+    if (!pool) {
+      return false;
+    }
+
     const fallbackGate: GatesActionRulesType = pool.has('*') ? pool.get('*') : false;
 
     // Controller not defined in pool, fallback to *, or hard default (false).
