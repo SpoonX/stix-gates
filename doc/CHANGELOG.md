@@ -1,3 +1,12 @@
+## [3.0.7](https://github.com/SpoonX/stix-gates/compare/v3.0.6...v3.0.7) (2019-06-27)
+
+
+### Bug Fixes
+
+* **Gate:** check for pool before calling methods ([2460fc9](https://github.com/SpoonX/stix-gates/commit/2460fc9))
+
+
+
 ## [3.0.6](https://github.com/SpoonX/stix-gates/compare/v3.0.5...v3.0.6) (2019-02-02)
 
 
